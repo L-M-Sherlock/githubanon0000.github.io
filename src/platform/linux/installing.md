@@ -21,7 +21,7 @@ sudo apt install libxcb-xinerama0 libxcb-cursor0 libnss3
 Sollte Anki nach der Installation nicht starten, fehlen Ihnen vielleicht
 [weitere Bibliotheksdateien](./missing-libraries.md).
 
-Wenn Sie Ubuntu 24.04 verwenden und Anki nicht startet, lesen Sie bitte den
+Wenn Sie Ubuntu 24.04 verwenden und Anki nicht startet, lesen Sie bitte
 [diesen englischen Forumpost](https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974).
 
 Ankis Buildsystem unterstützt nur glibc, weshalb auf musl basierende Distros
