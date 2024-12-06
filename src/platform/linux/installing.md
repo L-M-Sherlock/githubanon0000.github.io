@@ -32,7 +32,7 @@ gegenwärtig nicht unterstützt werden.
 Um Anki zu installieren:
 
 1. Laden Sie Anki von <https://apps.ankiweb.net> in Ihren Downloads Ordner
-   herunter. Lesen Sie den nächsten Abschnitt um zu erfahren, wie Sie zwischen
+   herunter. Lesen Sie den nächsten Abschnitt, um zu erfahren, wie Sie zwischen
    -qt5 und -qt6 wählen.
 2. Wenn zstd nicht bereits installiert ist, müssen Sie es installieren
    (z. B. `sudo apt install zstd`).
@@ -54,7 +54,7 @@ Bei manchen Linuxsystemen werden Sie gegebenenfalls
 
 ## Qt5 vs. Qt6
 
-Aktuelle Version von Anki werden in separaten Qt5 und Qt6 Varianten
+Aktuelle Versionen von Anki werden in separaten Qt5 und Qt6 Varianten
 veröffentlicht. Die Qt6 Version wird für die meisten Nutzer empfohlen.
 
 Vorteile der Qt6 Version:
@@ -65,7 +65,7 @@ Vorteile der Qt6 Version:
 - Bessere Wayland Unterstützung.
 - Verschiedene Fehlerbehebungen, einschließlich besserer Unterstützung für
   weniger gebräuchliche Sprachen.
-- Sicherheitsaktualisierungen. Die Unterstützung für die Qt5 Bibliothek würde im
+- Sicherheitsaktualisierungen. Die Unterstützung für die Qt5 Bibliothek wurde im
   November 2020 eingestellt, was bedeutet, dass alle seitdem festgestellten
   Sicherheitsprobleme nicht behoben werden.
 
@@ -84,7 +84,7 @@ Sie einfach die Installationsschritte, um auf die neueste Version zu
 aktualisieren. Ihre Nutzerdaten bleiben dabei erhalten.
 
 Möchten Sie ein Downgrade zu einer älteren Version durchführen, folgenden Sie
-bitte die [Downgrade Anweisungen](http://changes.ankiweb.net).
+bitte den [Downgrade Anweisungen](http://changes.ankiweb.net).
 
 
 ## Kompatibilität von Erweiterungen
