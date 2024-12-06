@@ -1,36 +1,43 @@
-# Installing & Upgrading Anki on Linux
+# Installation & Aktualisierung von Anki unter Linux
 
 <!-- toc -->
 
-## Requirements
+## Voraussetzungen
 
-The packaged version requires a recent 64 bit Intel/AMD Linux with glibc, and common
-libraries like libwayland-client and systemd. If you are on a different
-architecture (e.g ARM/AArch64), or a barebones Linux distro, you will not be able to use the
-packaged version, but you may be able to use the [Python wheels](https://betas.ankiweb.net/#via-pypipip)
-instead.
+Die Paketversion erfordert ein aktuelles 64-Bit Intel/AMD Linux mit glibc und
+üblichen Bibliotheken wie libwayland-client und systemd. Sollten Sie eine andere
+Architektur verwenden (z. B. ARM/AArch64) oder ein minimales Linux Distro, dann
+können Sie die Paketversion nicht verwenden. Stattdessen können Sie die
+[Python wheels](https://betas.ankiweb.net/#via-pypipip) Version nutzen.
 
-Debian and derivatives, such as Ubuntu and [Chromebooks with Linux enabled](https://support.google.com/chromebook/answer/9145439?), please use the following before
-installing:
+Debian und Derivate, wie beispielsweise Ubuntu und
+[Chromebooks mit aktiviertem Linux](https://support.google.com/chromebook/answer/9145439?),
+führen bitte das Nachfolgende vor der Installation von Anki aus:
 
 ```shell
 sudo apt install libxcb-xinerama0 libxcb-cursor0 libnss3
 ```
 
-If Anki fails to start after installing, you may be [missing other libraries](./missing-libraries.md).
+Sollte Anki nach der Installation nicht starten, fehlen Ihnen vielleicht
+[weitere Bibliotheksdateien](./missing-libraries.md).
 
-If you're on Ubuntu 24.04 and Anki won't start, please see [this thread](https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974).
+Wenn Sie Ubuntu 24.04 verwenden und Anki nicht startet, lesen Sie bitte den
+[diesen englischen Forumpost](https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974).
 
-Anki's build system only supports glibc, so musl-based distros are not currently supported.
+Ankis Buildsystem unterstützt nur glibc, weshalb auf musl basierende Distros
+gegenwärtig nicht unterstützt werden.
 
-## Installing
+## Installation
 
-To install Anki:
+Um Anki zu installieren:
 
-1. Download Anki from <https://apps.ankiweb.net> to your Downloads folder. See the next section
-   for how to choose between -qt5 and -qt6.
-2. If zstd is not already installed on your system, you'll need to install it (e.g `sudo apt install zstd`).
-3. Open a terminal and run the following commands, replacing the filename as appropriate.
+1. Laden Sie Anki von <https://apps.ankiweb.net> in Ihren Downloads Ordner
+   herunter. Lesen Sie den nächsten Abschnitt um zu erfahren, wie Sie zwischen
+   -qt5 und -qt6 wählen.
+2. Wenn zstd nicht bereits installiert ist, müssen Sie es installieren
+   (z. B. `sudo apt install zstd`).
+3. Öffnen Sie ein Terminalfenster und führen Sie die folgenden Befehle aus.
+   Bitte ersetzen Sie dabei den Dateinamen entsprechend.
 
 ```shell
 tar xaf Downloads/anki-2XXX-linux-qt6.tar.zst
@@ -38,57 +45,65 @@ cd anki-2XXX-linux-qt6
 sudo ./install.sh
 ```
 
-On some Linux systems, you may need to use `tar xaf --use-compress-program=unzstd`.
+Bei manchen Linuxsystemen werden Sie gegebenenfalls
+`tar xaf --use-compress-program=unzstd` nutzen müssen.
 
-4. You can then start Anki by typing 'anki' and hitting enter. If you encounter
-   any issues, please see the links on the left.
+4. Anschließend können Sie Anki starten, indem Sie 'anki' eintippen und Enter
+   drücken. Lesen Sie bitte die Links auf der linken Seite, falls Probleme
+   auftreten.
 
 ## Qt5 vs. Qt6
 
-Recent Anki versions come in separate Qt5 and Qt6 variants. The Qt6 version
-is recommended for most users.
+Aktuelle Version von Anki werden in separaten Qt5 und Qt6 Varianten
+veröffentlicht. Die Qt6 Version wird für die meisten Nutzer empfohlen.
 
-Advantages of the Qt6 version:
+Vorteile der Qt6 Version:
 
-- Compatibility with recent glibc versions (fixes [blank screens on recent distros](./blank-window.md)).
-- Better HiDPI support.
-- Better Wayland support.
-- Various bugfixes, including things like better support for less common languages.
-- Security updates. Support for the Qt5 library was discontinued in Nov 2020,
-  meaning that any security flaws discovered since then will remain unfixed.
+- Kompatibilität mit aktuellen glibc Versionen (behebt [Leerer Bildschirm bei
+  aktuellen Distros](./blank-window.md)).
+- Bessere HiDPI Unterstützung.
+- Bessere Wayland Unterstützung.
+- Verschiedene Fehlerbehebungen, einschließlich besserer Unterstützung für
+  weniger gebräuchliche Sprachen.
+- Sicherheitsaktualisierungen. Die Unterstützung für die Qt5 Bibliothek würde im
+  November 2020 eingestellt, was bedeutet, dass alle seitdem festgestellten
+  Sicherheitsprobleme nicht behoben werden.
 
-Disadvantages of the Qt6 version include:
+Nachteile der Qt6 Version beinhalten:
 
-- Some add-ons currently only work with the Qt5 version.
+- Manche Erweiterungen funktionieren gegenwärtig nur mit der Qt5 Version.
 
-## Upgrading
+## Aktualisierung
 
-If you were running Anki from a .deb/.rpm/etc in the past, please make
-sure to remove the system version before installing the package
-provided here.
+Wenn Sie Anki in der Vergangenheit von einer .deb/.rpm/usw. Datei ausgeführt
+haben, entfernen Sie bitte die Systemversion, bevor Sie das hier bereitgestellte
+Paket installieren.
 
-If you're upgrading from a previous package, simply repeat the
-installation steps to upgrade to the latest version. Your user data
-will be preserved.
+Wenn Sie die Aktualisierung von einem früheren Paket durchführen, wiederholen
+Sie einfach die Installationsschritte, um auf die neueste Version zu
+aktualisieren. Ihre Nutzerdaten bleiben dabei erhalten.
 
-If you wish to downgrade to a previous version, please make sure you
-[downgrade first](http://changes.ankiweb.net).
+Möchten Sie ein Downgrade zu einer älteren Version durchführen, folgenden Sie
+bitte die [Downgrade Anweisungen](http://changes.ankiweb.net).
 
-## Add-on Compatibility
 
-Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
+## Kompatibilität von Erweiterungen
 
-## Problems
+Manche Erweiterungen funktionieren nicht immer mit der neuesten Anki-Version.
+Wenn Sie Anki zur neuesten Version aktualisiert haben und eine für Sie
+essentielle Erweiterungen nicht mehr funktioniert, können Sie eine ältere
+Anki-Version von der [Veröffentlichungsseite](https://github.com/ankitects/anki/releases)
+herunterladen.
 
-If you encounter any issues when installing or starting Anki, please see the
-following pages:
+## Probleme
 
-- [Missing Libraries](missing-libraries.md)
-- [Display Issues](display-issues.md)
-- [Blank Main Window](blank-window.md)
-- [Linux Distro Packages](distro-packages.md)
-- [Incorrect GTK Theme](gtk-theme.md)
+Wenn bei der Installation oder beim Starten von Anki Probleme auftreten, lesen
+Sie bitte die folgenden Seiten:
+
+- [Fehlende Bibliotheksdateien](missing-libraries.md)
+- [Anzeigeprobleme](display-issues.md)
+- [Leeres Hauptfenster](blank-window.md)
+- [Linux Distro Pakete](distro-packages.md)
+- [Falsches GTK Thema](gtk-theme.md)
 - [Wayland](wayland.md)
-- [Input Methods](input-methods.md)
+- [Eingabemethoden](input-methods.md)
