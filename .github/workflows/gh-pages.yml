@@ -6,7 +6,7 @@ name: github pages
 on:
   push:
     branches:
-      - german_translation
+      - main
       - test
       - german_translation
 
