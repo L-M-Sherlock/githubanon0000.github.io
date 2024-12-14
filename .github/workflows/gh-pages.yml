@@ -8,6 +8,7 @@ on:
     branches:
       - main
       - test
+      - german_translation
 
 jobs:
   deploy:
